@@ -1,0 +1,15 @@
+# action.yml
+name: 'Setup Artify PYPI'
+description: 'Setup artify using pip'
+inputs:
+  private-token:  # id of input
+    description: 'User Private Token'
+    required: true
+outputs:
+  result: # id of output
+    description: 'Outcome of command executed'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.private }}
