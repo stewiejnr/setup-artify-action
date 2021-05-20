@@ -16,7 +16,10 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
     - uses: ./
+      id: setupartify
       with:
         private-token: ${{ secrets.PRIVATE_TOKEN }}
     - name: Test Action
       run: echo This works
+    - name: Get setup results
+      run: echo "Result is ${{ steps.setupartify.outputs.result }}"
