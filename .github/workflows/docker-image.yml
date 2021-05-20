@@ -15,6 +15,8 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
+    - name: Change permission
+      run: chmod +x entrypoint.sh
     - uses: ./
       id: setupartify
       with:
